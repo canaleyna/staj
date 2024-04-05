@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Hamburger Menü</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+
+        
+        .container{
+            width:100%;
+            height:100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hamburger-btn {
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            border: 5px solid #000;
+            border-radius: 50%; /*daire oldu*/
+            transition: 300ms ease-in-out;
+            display: flex; /*çizgileri ortaladım*/
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .line{
+            width: 40px;
+            height: 5px;
+            display: block; /*span inline bir etiket onu block yaptık*/
+            background-color: #000;
+            margin: 5px 0; /*üst/alt ve sağ/sol*/
+            border-radius: 10px;
+            transition: 300ms ease-in-out;
+        }
+
+        .hamburger-btn:hover .line:nth-child(1) {
+            transform: translateY(15px) rotate(45deg); /*ilk çizgiyi y ekseninde aşagı öteledik ve sağa döndürdük*/
+            background-color:bisque;
+        }
+
+        .hamburger-btn:hover .line:nth-child(3) {
+            transform: translateY(-15px) rotate(-45deg); /*son çizgiyi y ekseninde yukarı öteledik ve sola döndürdük*/
+            background-color: bisque;
+        }
+
+        .hamburger-btn:hover .line:nth-child(2) {
+            opacity: 0; /*ortadaki çizgi ortadan kalksın,görünmesin*/
+        }
+
+        .hamburger-btn:hover{
+            background-color: #000;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <button class="hamburger-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

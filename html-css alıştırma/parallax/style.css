@@ -1,0 +1,91 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: 0;
+    text-align:center;
+}
+
+body{
+    height: 100vh;
+}
+
+.main-section,
+.footer-section{
+    position:relative; /*left,right.. ile pozisyon verebilelim diye yeri değisse de eski olduğu konumu korur, absolute den ziyade*/
+    min-height: 100vh;
+    opacity: 0.7; /*opaklık*/
+}
+
+.main-img,
+.footer-img{
+    background-image: url("https://jolly-kalam-23776e.netlify.app/parallaxsite/img/image1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height:100vh; /*resim görünsün*/
+}
+
+
+.main-head,
+.footer-head{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size:30px;
+    letter-spacing: 10px; /*harfler arası boşluk*/
+}
+.border{
+    padding: 17px 20px;
+    background-color: black;
+}
+
+
+.section-one,
+.section-two,
+.section-three{
+    opacity:0.7;
+    height:250px;
+    background-color:#f4f4f4;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.section-one h2,
+.section-two h2,
+.section-three h2{
+    font-size: 25px;
+    padding-top:25px;
+    margin-bottom:20px;  
+}
+
+
+
+.h2-info {
+    padding: 0 120px;
+}
+
+
+.section-one-photo,
+.section-two-photo{
+    position: relative; /*main-head yazıları üst üste biniyor*/
+    opacity: 0.7;
+}
+.one-photo {
+    background-image: url("https://jolly-kalam-23776e.netlify.app/parallaxsite/img/image2.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+.two-photo {
+    background-image: url("https://jolly-kalam-23776e.netlify.app/parallaxsite/img/image3.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}

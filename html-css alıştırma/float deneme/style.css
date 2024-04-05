@@ -1,0 +1,54 @@
+﻿body{
+    margin: 0;
+    padding: 0;
+
+}
+
+.container{
+    width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+    /*margin: 0 auto 0 auto;   veya 0 auto*/
+    margin: 50px auto 0;
+}
+
+.left-bar{
+    width:200px;
+    float:left;
+}
+
+.content{
+    width:800px;
+    float:left;
+}
+.card{
+    width: 18%;
+    float: left;
+    padding: 5%;
+    margin: 2%;
+    background-color: rgb(128, 128, 128);
+    border-radius: 10px;
+
+}
+/*solu ve sağı temizle*/
+.clear{
+    clear: both;
+}
+
+.box{
+    width: 300px;
+    height: 300px;
+    padding: 10px; /*bu height ve width i etkiliyor toplamda 320px*/
+    margin-right: 10px;
+    float: left;
+}
+
+.bg-red{
+    background-color: red;
+}
+.bg-green{
+    background-color: green;
+}
+.bg-blue{
+    background-color: blue;
+}

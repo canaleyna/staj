@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>İmage Card</title>
+    <style>
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box1,
+        .box2,
+        .box3{
+            margin-right: 20px;
+            width: 300px;
+            height: 250px;
+            background-color: #000;
+            overflow: hidden;
+            position: relative; /* overlay absolute ü sınırlandırmak için*/
+            
+        }
+
+        .box1 img,
+        .box2 img,
+        .box3 img{
+            width: 100%;
+            height: 100%;
+            transition: 300ms ease-in;
+        }
+        .overlay1 {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            opacity: 0;
+            transition: 300ms ease-in;
+        }
+
+        .box1:hover .overlay1{
+            opacity: 0.7; /*hover olduğunda görünmesi için opacity değerini arttırdık*/
+        }
+
+        .box1:hover img{
+            transform: scale(1.2);
+        }
+
+        .overlay2 {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            position: absolute;
+            left: 100%; /*tamamen sağa kaydırdım*/
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            transition: 300ms ease-in;
+        }
+
+        .box2:hover .overlay2 {
+            left: 0; /*left ı eski haline döndürdük böylece sağdan sola kaymış oldu*/
+            opacity: 0.7;
+        }
+        .box2:hover img {
+            transform: scale(1.2);
+        }
+
+        .overlay3 {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            position: absolute;
+            left:0;
+            top: -100%; /*üstten alta kaymasını istediğim için önce 100% dısarı öteledim*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            transition: 300ms ease-in;
+        }
+
+        .box3:hover .overlay3 {
+            top: 0; /*eski haline döndürdük böylece üstten alta kaymış oldu*/
+            opacity: 0.7;
+        }
+
+        .box3:hover img {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <img src="flower.jpg" alt="flowers" />
+            <div class="overlay1">
+                <div class="overlay-text">
+                    <h2>Flowers</h2>
+                    <p>Flowers in vase</p>
+                </div>
+            </div>
+        </div>
+        <div class="box2">
+            <img src="flower.jpg" alt="flowers" />
+            <div class="overlay2">
+                <div class="overlay-text">
+                    <h2>Flowers</h2>
+                    <p>Flowers in vase</p>
+                </div>
+            </div>
+        </div>
+        <div class="box3">
+            <img src="flower.jpg" alt="flowers" />
+            <div class="overlay3">
+                <div class="overlay-text">
+                    <h2>Flowers</h2>
+                    <p>Flowers in vase</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

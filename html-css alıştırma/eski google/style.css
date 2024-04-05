@@ -1,0 +1,67 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.search-section {
+    width: 1200px;
+    text-align: center;
+    background-color: gray;
+}
+
+.search-section input[type="text"] {
+    width: 500px;
+    border: 1px solid black;
+}
+
+.links-section {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between; /*alt bölümleri konteyner içinde yatayda eşit bir şekilde yayarak sağa sola yerleştirir*/
+    margin-top: 20px;
+
+}
+
+.links-section .special-searches,
+.links-section .about-section,
+.links-section .get-google-section {
+    flex: 1; /*her bölümün eşit genişliğe sahip olmasını sağlar*/
+    margin-right: 10px; /* İstenilen boşluk miktarını ayarlayabilirsiniz */
+}
+
+.links-section .special-searches {
+    background-color: #d7ecfb; 
+}
+
+.links-section .about-section {
+    background-color: #b5defc; 
+}
+
+.links-section .get-google-section {
+    background-color: #8accfc; 
+}
+
+.links-section p,
+.links-section form
+{
+    margin: 0;
+    text-align:center;
+    padding-top:5px;
+}
+

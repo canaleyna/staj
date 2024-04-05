@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Css Tooltip</title>
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltipText {
+            visibility: hidden;
+            width: 140px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .tooltip:hover .tooltipText {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tooltip .tooltipText::after {
+            content: " ";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tooltip Örneği</h1>
+    <p>Aşağıdaki cümlede <strong>sitemizden</strong> kelimesi üzerine geliniz.</p>
+
+    <p>
+        Neler yaptıklarımızı <span class="tooltip">sitemizden<span class="tooltipText">www.metasoft.com.tr</span></span> takip edebilirsiniz.
+    </p>
+</body>
+</html>
