@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>tooltips</title>
+    <style>
+        body {
+            padding: 70px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <button id="btnShow" class="btn btn-danger">Show</button>
+    <button id="btnHide" class="btn btn-danger">Hide</button>
+    <button id="btnToggle" class="btn btn-danger">Toggle</button>
+
+
+    <br /><br />
+
+
+    <button id="btn1" type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="tooltip text">Tooltip text</button>
+    <button id="btn2" type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="<h1>tooltip text</h1><p>Lorem, ipsum.</p>">Tooltip Html</button>
+    <button id="btn3" type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="<h1>tooltip text</h1><p>Lorem, ipsum.</p>">Tooltip Html</button>
+    <button id="btn4" type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-html="true" title="<h1>tooltip text</h1><p>Lorem, ipsum.</p>">Tooltip Html</button>   <!-- data-bs-html="true" html elementlerini yorumlayabilmek için, yoksa düz yazı biçiminde yorumlar-->
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script>
+
+        //title içeriği için
+        var btn1 = document.getElementById('btn1');
+        //const btnTooltip1 = new bootstrap.Tooltip(btn1);
+
+
+        var btn2 = document.getElementById('btn2');
+        //const btnTooltip2 = new bootstrap.Tooltip(btn2);
+
+        var tooltipElementList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')); //nodelist dönen elemanlara tek tek ulaşalım elementleri liste olarak alalım
+        //console.log(tooltipElementList);
+
+
+        var tooltipObjectList = tooltipElementList.map(function (element) {
+            return new bootstrap.Tooltip(element); //elementleri objeye çevirdik
+        })
+
+        console.log(tooltipObjectList);
+
+        document.getElementById('btnShow').addEventListener('click', function () {
+            btnTooltip1.show();
+            btnTooltip2.show();
+        });
+
+        document.getElementById('btnHide').addEventListener('click', function () {
+            btnTooltip1.hide();
+            btnTooltip2.hide();
+        });
+
+        document.getElementById('btnToggle').addEventListener('click', function () {
+            btnTooltip1.toggle();
+            btnTooltip2.toggle();
+        });
+
+
+        btn1.addEventListener('show.bs.tooltip', function () {
+            console.log('tooltip gösterilmeden önce')
+        });
+
+        btn1.addEventListener('shown.bs.tooltip', function () {
+            console.log('tooltip gösterildikten sonra')
+        });
+
+        btn1.addEventListener('hide.bs.tooltip', function () {
+            console.log('tooltip gizlenmeden önce')
+        });
+
+        btn1.addEventListener('hidden.bs.tooltip', function () {
+            console.log('tooltip gizlendikten sonra')
+        });
+    </script>
+
+
+</body>
+</html>

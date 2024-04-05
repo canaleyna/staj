@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>liste ve liste grupları</title>
+    <style>
+        body {
+            padding: 70px;
+        }
+    </style>
+</head>
+<body>
+
+    <!--stilsiz liste-->
+    <ul class="list-unstyled">
+        <li>Consectetur adipiscing elit fusce vel.</li>
+        <li>Sapien elit in malesuada semper.</li>
+        <li>Mi, id sollicitudin urna fermentum.</li>
+        <li>Ut fusce varius nisl ac.</li>
+    </ul>
+
+    <br /><br />
+
+    <!--yanyana olsun istersek list-inline ve list-inline-item-->
+    <ul class="list-inline">
+        <li class="list-inline-item">Consectetur adipiscing elit fusce vel.</li>
+        <li class="list-inline-item">Sapien elit in malesuada semper.</li>
+        <li class="list-inline-item">Mi, id sollicitudin urna fermentum.</li>
+        <li class="list-inline-item">Ut fusce varius nisl ac.</li>
+    </ul>
+
+    <br /><br />
+
+    <!--list group olusturalım-->
+    <ul class="list-group w-25">
+        <li class="list-group-item">Consectetur adipiscing elit fusce vel.</li>
+        <li class="list-group-item">Sapien elit in malesuada semper.</li>
+        <li class="list-group-item">Mi, id sollicitudin urna fermentum.</li>
+        <li class="list-group-item">Ut fusce varius nisl ac.</li>
+        <li class="list-group-item">Ut fusce varius nisl ac.</li>
+    </ul>
+
+    <br /><br />
+
+    <!--list group olusturalım active, disabled verelim-->
+    <ul class="list-group w-25">
+        <li class="list-group-item active">Consectetur adipiscing elit fusce vel.</li>
+        <li class="list-group-item">Sapien elit in malesuada semper.</li>
+        <li class="list-group-item disabled">Mi, id sollicitudin urna fermentum.</li>
+        <li class="list-group-item">Ut fusce varius nisl ac.</li>
+        <li class="list-group-item">Ut fusce varius nisl ac.</li>
+    </ul>
+
+    <br /><br />
+
+    <!--list-group-flush, kenarlıksız. bu card olustururken kullanılabilir-->
+    <ul class="list-group-flush w-25">
+        <li class="list-group-item">Consectetur adipiscing elit fusce vel.</li>
+        <li class="list-group-item">Sapien elit in malesuada semper.</li>
+        <li class="list-group-item">Mi, id sollicitudin urna fermentum.</li>
+        <li class="list-group-item">Ut fusce varius nisl ac.</li>
+        <li class="list-group-item">Ut fusce varius nisl ac.</li>
+    </ul>
+
+    <br /><br />
+
+    <!--her bir liste elemanı link olsun-->
+    <ul class="list-group w-25">
+        <a href="" class="list-group-item list-group-item-action">Lorem, ipsum.</a>
+        <a href="" class="list-group-item list-group-item-action active">Lorem, ipsum.</a>
+        <a href="" class="list-group-item list-group-item-action">Lorem, ipsum.</a>
+        <a href="" class="list-group-item list-group-item-action disabled">Lorem, ipsum.</a>
+    </ul>
+
+    <br /><br />
+
+    <!--renk verelim-->
+    <ul class="list-group w-25">
+        <li class="list-group-item list-group-item-primary">Consectetur adipiscing elit fusce vel.</li>
+        <li class="list-group-item list-group-item-danger">Sapien elit in malesuada semper.</li>
+        <li class="list-group-item list-group-item-success">Mi, id sollicitudin urna fermentum.</li>
+        <li class="list-group-item list-group-item-info">Ut fusce varius nisl ac.</li>
+    </ul>
+
+    <br /><br />
+
+    <!--alt alta değil de yatayda sıralayalım-->
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">Consectetur adipiscing elit fusce vel.</li>
+        <li class="list-group-item">Sapien elit in malesuada semper.</li>
+        <li class="list-group-item">Mi, id sollicitudin urna fermentum.</li>
+        <li class="list-group-item">Ut fusce varius nisl ac.</li>
+        <li class="list-group-item">Ut fusce varius nisl ac.</li>
+    </ul>
+
+
+
+    <br /><br />
+
+    <!--badge class denemesi, yatayda aralarını açmak için flexbox ekleyelim, justify yatayda, align dikeyde ortalama -->
+    <ul class="list-group w-25">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Dolor sit.
+            <span class="badge bg-primary rounded-pill">10</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Dolor sit.
+            <span class="badge bg-primary rounded-pill">9</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Dolor sit.
+            <span class="badge bg-primary rounded-pill">8</span>
+        </li>
+    </ul>
+
+
+    <br /><br />
+
+    <!--li etiketlerinde sadece kutuya tıklayınca tik atıyor ancak li yerine label olsaydı satıra tıklayınca da tik atardı--->
+    <ul class="list-group w-25">
+        <li class="list-group-item">
+            <input type="checkbox" class="form-check-input me-1" />
+            Consectetur adipiscing.
+        </li>
+        <li class="list-group-item">
+            <input type="checkbox" class="form-check-input me-1" />
+            Consectetur adipiscing.
+        </li>
+        <li class="list-group-item">
+            <input type="checkbox" class="form-check-input me-1" />
+            Consectetur adipiscing.
+        </li>
+        <label class="list-group-item">
+            <input type="checkbox" class="form-check-input me-1" />
+            Consectetur adipiscing.
+        </label>
+
+    </ul>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

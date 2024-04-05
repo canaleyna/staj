@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>buttons</title>
+    <style>
+        body{
+            padding: 70px;
+        }
+    </style>
+</head>
+<body>
+
+    <button type="button" class="btn btn-primary">primary</button>
+    <button type="button" class="btn btn-danger">danger</button>
+    <button type="button" class="btn btn-secondary">secondary</button>
+    <button type="button" class="btn btn-warning">warning</button>
+    <button type="button" class="btn btn-success">success</button>
+    <button type="button" class="btn btn-info">info</button>
+    <button type="button" class="btn btn-light">light</button>
+    <button type="button" class="btn btn-dark">dark</button>
+    <button type="button" class="btn btn-link">link</button>
+
+    <br /><br />
+
+    <!--btn-outline ile zemin değil border renklenir-->
+    <button type="button" class="btn btn-outline-primary">primary</button>
+    <button type="button" class="btn btn-outline-danger">danger</button>
+    <button type="button" class="btn btn-outline-secondary">secondary</button>
+    <button type="button" class="btn btn-outline-warning">warning</button>
+    <button type="button" class="btn btn-outline-success">success</button>
+    <button type="button" class="btn btn-outline-info">info</button>
+    <button type="button" class="btn btn-outline-light">light</button>
+    <button type="button" class="btn btn-outline-dark">dark</button>
+
+
+    <br /><br />
+
+    <!-- button boyutları btn-sm btn-lg-->
+    <button class="btn btn-primary btn-sm">small</button>
+    <button class="btn btn-primary btn-lg">large</button>
+
+    <br /><br />
+
+    <!-- block button  div içinde alıp d-grid gap-2 clasını vermeniz gerekli-->
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary">block button</button>
+        <button class="btn btn-danger">block button</button>
+    </div>
+
+
+    <br /><br />
+
+    <!-- disabled button , yani tıklanabilir değil etkisiz buton ayrıca daha soluk renkli, 2 türlü disabled yapılabilir-->
+    <button class="btn btn-primary" disabled>disabled button</button>
+    <button class="btn btn-danger disabled">disabled button</button>
+
+    <br /><br />
+
+    <!--buton grubu -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary">primary</button>
+        <button type="button" class="btn btn-danger">danger</button>
+        <button type="button" class="btn btn-secondary">secondary</button>
+    </div>
+
+    <br /><br />
+
+    <!--buton grubu active özelliği verelim birine -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary active">primary</button>
+        <button type="button" class="btn btn-primary">primary</button>
+        <button type="button" class="btn btn-primary">primary</button>
+    </div>
+
+    <br /><br />
+
+    <!--buton grubu outline özelliği verelim -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-outline-primary">primary</button>
+        <button type="button" class="btn btn-outline-primary">primary</button>
+        <button type="button" class="btn btn-outline-primary">primary</button>
+    </div>
+
+
+    <br /><br />
+
+    <!-- toolbar -->
+    <div class="btn-toolbar">
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">1</button>
+            <button type="button" class="btn btn-primary">2</button>
+            <button type="button" class="btn btn-primary">3</button>
+        </div>
+
+        <div class="btn-group ms-1">
+             <button type="button" class="btn btn-primary">4</button>
+             <button type="button" class="btn btn-primary">5</button>
+             <button type="button" class="btn btn-primary">6</button>
+        </div>
+
+        <div class="btn-group ms-1">
+            <button type="button" class="btn btn-primary">7</button>
+            <button type="button" class="btn btn-primary">8</button>
+            <button type="button" class="btn btn-primary">9</button>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
