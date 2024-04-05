@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+
+        // Tek bir iç fonksiyona sahip bir closure oluşturun
+        function outerFunction() {
+            let outerVar = 'Ben bir dış değişkenim';
+
+            function innerFunction() {
+                console.log(outerVar);
+            }
+
+            return innerFunction;
+        }
+
+        const closure = outerFunction();
+        closure(); // Çıktı: Ben bir dış değişkenim
+
+
+
+        // Üç iç fonksiyona sahip bir closure oluşturun
+        function threeFunctionsClosure() {
+            let variable1 = 'Ben değişken 1';
+
+            function innerFunction1() {
+                console.log(variable1);
+            }
+
+            function innerFunction2() {
+                console.log('Ben iç fonksiyon 2');
+            }
+
+            function innerFunction3() {
+                console.log('Ben iç fonksiyon 3');
+            }
+
+            return {
+                innerFunction1,
+                innerFunction2,
+                innerFunction3,
+            };
+        }
+
+        const closure2 = threeFunctionsClosure();
+        closure2.innerFunction1(); // Çıktı: Ben değişken 1
+        closure2.innerFunction2(); // Çıktı: Ben iç fonksiyon 2
+        closure2.innerFunction3(); // Çıktı: Ben iç fonksiyon 3
+
+
+
+        // personAccount fonksiyonunu oluşturun
+        function personAccount(isim, soyisim) {
+            let gelirler = [];
+            let giderler = [];
+
+            function gelirEkle(miktar, aciklama) {
+                gelirler.push({ miktar, aciklama });
+            }
+
+            function giderEkle(miktar, aciklama) {
+                giderler.push({ miktar, aciklama });
+            }
+
+            function toplamGelir() {
+                return gelirler.reduce((toplam, gelir) => toplam + gelir.miktar, 0);
+            }
+
+            function toplamGider() {
+                return giderler.reduce((toplam, gider) => toplam + gider.miktar, 0);
+            }
+
+            function hesapBilgisi() {
+                console.log(`Ad: ${isim} ${soyisim}`);
+                console.log(`Toplam Gelir: ${toplamGelir()}`);
+                console.log(`Toplam Gider: ${toplamGider()}`);
+            }
+
+            function hesapBakiyesi() {
+                return toplamGelir() - toplamGider();
+            }
+
+            return {
+                gelirEkle,
+                giderEkle,
+                toplamGelir,
+                toplamGider,
+                hesapBilgisi,
+                hesapBakiyesi,
+            };
+        }
+
+        const kisiHesabi = personAccount('Aley', 'Can');
+        kisiHesabi.gelirEkle(25000, 'Maaş');
+        kisiHesabi.giderEkle(5000, 'Kira');
+        kisiHesabi.giderEkle(2000, 'Fatura');
+        kisiHesabi.hesapBilgisi();
+        console.log(`Hesap Bakiyesi: ${kisiHesabi.hesapBakiyesi()}`);
+
+
+
+    </script>
+
+</body>
+</html>

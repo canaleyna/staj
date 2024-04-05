@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+        //  tamAd fonksiyonu
+        function tamAd() {
+            console.log("Adınız Soyadınız");
+        }
+
+        // tamAd fonksiyonu parametreli
+        function tamAdParametreli(adi, soyadi) {
+            return adi + " " + soyadi;
+        }
+
+        //  sayilariTopla fonksiyonu
+        function sayilariTopla(a, b) {
+            return a + b;
+        }
+
+        //  dikdortgenAlani fonksiyonu
+        function dikdortgenAlani(uzunluk, genislik) {
+            return uzunluk * genislik;
+        }
+
+        //  dikdortgenCevresi fonksiyonu
+        function dikdortgenCevresi(uzunluk, genislik) {
+            return 2 * (uzunluk + genislik);
+        }
+
+        //  dikPrizmaHacmi fonksiyonu
+        function dikPrizmaHacmi(uzunluk, genislik, yukseklik) {
+            return uzunluk * genislik * yukseklik;
+        }
+
+        //  daireAlani fonksiyonu
+        function daireAlani(yaricap) {
+            return Math.PI * yaricap * yaricap;
+        }
+
+        //  daireCevresi fonksiyonu
+        function daireCevresi(yaricap) {
+            return 2 * Math.PI * yaricap;
+        }
+
+
+        //  hizHesapla fonksiyonu
+        function hizHesapla(mesafe, zaman) {
+            return mesafe / zaman;
+        }
+
+
+        //  celsiusToFahrenheit fonksiyonu
+        function celsiusToFahrenheit(celsius) {
+            return (celsius * 9 / 5) + 32;
+        }
+
+        //  vucutKitleEndeksi fonksiyonu
+        function vucutKitleEndeksi(kütle, boy) {
+            return kütle / (boy * boy);
+        }
+
+        //  bmiKontrol fonksiyonu
+        function bmiKontrol(kütle, boy) {
+            const bmiDegeri = vucutKitleEndeksi(kütle, boy);
+            if (bmiDegeri < 18.5) {
+                return "Zayıf";
+            } else if (bmiDegeri >= 18.5 && bmiDegeri <= 24.9) {
+                return "Normal kilolu";
+            } else if (bmiDegeri >= 25 && bmiDegeri <= 29.9) {
+                return "Fazla kilolu";
+            } else {
+                return "Obez";
+            }
+        }
+
+        //  mevsimKontrol fonksiyonu
+        function mevsimKontrol(ay) {
+            switch (ay) {
+                case "Aralık":
+                case "Ocak":
+                case "Şubat":
+                    return "Kış";
+                case "Mart":
+                case "Nisan":
+                case "Mayıs":
+                    return "İlkbahar";
+                case "Haziran":
+                case "Temmuz":
+                case "Ağustos":
+                    return "Yaz";
+                case "Eylül":
+                case "Ekim":
+                case "Kasım":
+                    return "Sonbahar";
+                default:
+                    return "Geçersiz ay";
+            }
+        }
+
+        //  enBuyukBul fonksiyonu
+        function enBuyukBul(a, b, c) {
+            return Math.max(a, b, c);
+        }
+
+        console.log(enBuyukBul(0, 10, 5)); // Çıktı: 10
+        console.log(enBuyukBul(0, -10, -2)); // Çıktı: 0
+
+
+
+        // 7 karakterli random id olusturma
+        function userIdGenerator() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let userId = '';
+            for (let i = 0; i < 7; i++) {
+                userId += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return userId;
+        }
+
+
+        // Pozitif bir tam sayıda çift ve tek sayıları sayar.
+        function evensAndOdds(number) {
+            let evens = 0;
+            let odds = 0;
+
+            for (let i = 1; i <= number; i++) {
+                if (i % 2 === 0) {
+                    evens++;
+                } else {
+                    odds++;
+                }
+            }
+
+            console.log(`Çift sayıların sayısı: ${evens}`);
+            console.log(`Tek sayıların sayısı: ${odds}`);
+        }
+
+    </script>
+
+</body>
+</html>

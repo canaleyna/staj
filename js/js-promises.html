@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+        // Fetch kullanarak countriesAPI'sini okuyun ve country, capital, languages, population ve area adını yazdırın.
+        const ulkelerAPI = 'https://restcountries.com/v2/all';
+
+        fetch(ulkelerAPI)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ağ yanıtı düzgün değil');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Her bir ülkeyi işle
+                data.forEach(ulke => {
+                    const { name, capital, languages, population, area } = ulke;
+
+                    console.log(`Ülke: ${name}`);
+                    console.log(`Başkent: ${capital}`);
+                    console.log(`Konuşulan Diller: ${languages.join(', ')}`);
+                    console.log(`Nüfus: ${population}`);
+                    console.log(`Alan: ${area}`);
+                    console.log('---------------------------');
+                });
+            })
+            .catch(error => {
+                console.error('Fetch işleminde bir sorun oluştu:', error);
+            });
+
+
+
+            //Tüm kedi adlarını catNames değişkenine yazdırın.
+        const kediAPI = 'https://api.thecatapi.com/v1/breeds';
+
+        fetch(kediAPI)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ağ yanıtı düzgün değil');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Tüm kedi isimlerini al
+                const catNames = data.map(cat => cat.name);
+                console.log('Tüm Kedi İsimleri:', catNames);
+            })
+            .catch(error => {
+                console.error('Fetch işleminde bir sorun oluştu:', error);
+            });
+
+
+        // Kediler API'sini okuyarak ortalama ağırlığı (metric birimde) bulma:  
+
+        const catsAPI = 'https://api.thecatapi.com/v1/breeds';
+
+        fetch(catsAPI)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ağ yanıtı düzgün değil');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Tüm kedilerin ağırlıklarını al ve ortalamayı hesapla
+                const weights = data.map(cat => cat.weight.metric.split(' - '));
+                const averageWeight = calculateAverage(weights);
+                console.log('Ortalama Kedi Ağırlığı:', averageWeight, 'kilogram');
+            })
+            .catch(error => {
+                console.error('Fetch işleminde bir sorun oluştu:', error);
+            });
+
+        // Verilen bir sayı dizisindeki ortalama değeri hesaplayan yardımcı fonksiyon
+        function calculateAverage(numbers) {
+            const sum = numbers.reduce((acc, weight) => {
+                const [min, max] = weight.map(Number);
+                return acc + (min + max) / 2;
+            }, 0);
+            return sum / numbers.length;
+        }
+
+
+
+
+
+        // Ülkeler API'sini okuyarak en büyük 10 ülkeyi bulma:
+
+        const countriesAPI = 'https://restcountries.com/v2/all';
+
+        fetch(countriesAPI)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ağ yanıtı düzgün değil');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Ülkeleri nüfusa göre sırala ve en büyük 10 ülkeyi al
+                const largestCountries = data.sort((a, b) => b.population - a.population).slice(0, 10);
+                console.log('En Büyük 10 Ülke:', largestCountries.map(country => country.name));
+            })
+            .catch(error => {
+                console.error('Fetch işleminde bir sorun oluştu:', error);
+            });
+
+
+
+    </script>
+
+
+</body>
+</html>

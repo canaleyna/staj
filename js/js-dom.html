@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+
+    <!-- Dört adet paragraf ekleyelim -->
+    <p>First Paragraph</p>
+    <p id="secondParagraph">Second Paragraph</p>
+    <p id="thirdParagraph">Third Paragraph</p>
+    <p>Fourth Paragraph</p>
+
+    <script>
+
+        // 1. Document.querySelector(tagname) kullanarak ilk paragrafa erişim
+        const firstParagraph = document.querySelector('p');
+        console.log('1. First Paragraph:', firstParagraph.textContent);
+
+        // 2. Her bir paragrafa id ile erişim (document.querySelector('#id'))
+        const secondParagraph = document.querySelector('#secondParagraph');
+        const thirdParagraph = document.querySelector('#thirdParagraph');
+        console.log('2. Second Paragraph:', secondParagraph.textContent);
+        console.log('   Third Paragraph:', thirdParagraph.textContent);
+
+        // 3. NodeList olarak tüm paragraflara erişim (document.querySelectorAll(tagname))
+        const allParagraphs = document.querySelectorAll('p');
+
+        // 4. NodeList üzerinde döngü yaparak her paragrafın metin içeriğini almak
+        console.log('3. All Paragraphs:');
+        allParagraphs.forEach((paragraph, index) => {
+            console.log(`   Paragraph ${index + 1}:`, paragraph.textContent);
+        });
+
+        // 5. Dördüncü paragrafın metin içeriğini değiştirme
+        allParagraphs[3].textContent = '4. Paragraph';
+
+        // 6. Her paragrafa id ve class eklemek
+        allParagraphs.forEach((paragraph, index) => {
+            paragraph.id = `paragraph${index + 1}`;
+            paragraph.className = 'customClass';
+        });
+
+
+
+    </script>
+
+</body>
+</html>

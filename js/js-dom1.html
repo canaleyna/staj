@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+    <style>
+        .green {
+            color: green;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <!-- Paragrafları Stil ve İçerik Açısından Değiştirmek -->
+    <h2>Paragrafları Stil ve İçerik Açısından Değiştirmek</h2>
+    <p class="green">First Paragraph</p>
+    <p class="red">Second Paragraph</p>
+    <p class="green">Third Paragraph</p>
+    <p class="red">Fourth Paragraph</p>
+
+    <script>
+
+        // Paragrafları seçelim
+        const allParagraphs = document.querySelectorAll('p');
+
+        // Paragrafların stilini değiştirelim
+        allParagraphs.forEach((paragraph, index) => {
+            // Her iki paragrafta da metin rengini değiştirelim
+            if (index === 0 || index === 2) {
+                paragraph.classList.add('green');
+            } else {
+                paragraph.classList.add('red');
+            }
+
+            // Paragrafın içeriğini değiştirelim
+            paragraph.textContent = `This is the new content for paragraph ${index + 1}`;
+        });
+
+    </script>
+
+
+</body>
+</html>

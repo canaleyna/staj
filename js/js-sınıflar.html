@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+        class Animal {
+            constructor(isim, yaş, renk, ayakSayısı) {
+                this.isim = isim;
+                this.yaş = yaş;
+                this.renk = renk;
+                this.ayakSayısı = ayakSayısı;
+            }
+
+            sesCikar() {
+                console.log('Ses çıkarıyor...');
+            }
+
+            bilgileriGoster() {
+                console.log(`İsim: ${this.isim}, Yaş: ${this.yaş}, Renk: ${this.renk}, Ayak Sayısı: ${this.ayakSayısı}`);
+            }
+        }
+
+        class Dog extends Animal {
+            constructor(isim, yaş, renk) {
+                super(isim, yaş, renk, 4); // Köpeklerin genellikle 4 ayakları vardır.
+            }
+
+            sesCikar() {
+                console.log('Hav hav!');
+            }
+        }
+
+        class Cat extends Animal {
+            constructor(isim, yaş, renk) {
+                super(isim, yaş, renk, 4); // Kedilerin genellikle 4 ayakları vardır.
+            }
+
+            sesCikar() {
+                console.log('Miyav!');
+            }
+        }
+
+        // Kediyi ve köpeği oluşturalım
+        const myDog = new Dog('Karabaş', 3, 'Kahverengi');
+        const myCat = new Cat('Whiskers', 2, 'Siyah-beyaz');
+
+        // Bilgilerini gösterelim
+        myDog.bilgileriGoster();
+        myDog.sesCikar();
+
+        myCat.bilgileriGoster();
+        myCat.sesCikar();
+
+
+    </script>
+
+</body>
+</html>

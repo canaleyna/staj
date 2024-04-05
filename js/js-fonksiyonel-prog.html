@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+        // forEach, map, filter, reduce arasındaki farkları açıklayın
+
+        // forEach: Dizinin her elemanı için bir fonksiyonu çağırır, ancak geriye yeni bir dizi döndürmez.
+        // map: Dizinin her elemanını bir fonksiyonla işleyip yeni bir dizi oluşturur.
+        // filter: Dizinin belirli şartları sağlayan elemanları ile yeni bir dizi oluşturur.
+        // reduce: Dizi elemanlarını birleştirip, toplar veya başka bir operasyon uygulayarak bir sonuç üretir.
+
+
+
+        const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+        const names = ['Aleyna', 'Can', 'Ali', 'Veli']
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const products = [
+            { product: 'banana', price: 3 },
+            { product: 'mango', price: 6 },
+            { product: 'potato', price: ' ' },
+            { product: 'avocado', price: 8 },
+            { product: 'coffee', price: 10 },
+            { product: 'tea', price: '' },
+        ]
+
+
+
+        // forEach için örnek
+        countries.forEach(country => console.log(country));
+
+        // names dizisi için forEach örneği
+        names.forEach(name => console.log(name));
+
+        // numbers dizisi için forEach örneği
+        numbers.forEach(number => console.log(number));
+
+        // countries dizisindeki her bir ülkeyi büyük harfe çevirerek yeni bir dizi oluşturun
+        const upperCaseCountries = countries.map(country => country.toUpperCase());
+
+        // countries dizisindeki her bir ülkenin uzunluğunu içeren yeni bir dizi oluşturun
+        const countriesLength = countries.map(country => country.length);
+
+        // numbers dizisindeki her bir sayının karesini içeren yeni bir dizi oluşturun
+        const squaredNumbers = numbers.map(number => number ** 2);
+
+        // names dizisindeki her bir ismi büyük harfe çevirerek yeni bir dizi oluşturun
+        const upperCaseNames = names.map(name => name.toUpperCase());
+
+        // products dizisini fiyatlarına dönüştürerek yeni bir dizi oluşturun
+        const productPrices = products.map(product => product.price);
+
+        // countries dizisinden 'land' içerenleri filtreleyerek yeni bir dizi oluşturun
+        const countriesWithLand = countries.filter(country => country.toLowerCase().includes('land'));
+        console.log(countriesWithLand)
+
+        // countries dizisinde karakter sayısı altı olanları filtreleyerek yeni bir dizi oluşturun
+        const countriesWithSixChars = countries.filter(country => country.length === 6);
+        console.log(countriesWithSixChars)
+
+        // countries dizisinde altı harf veya daha fazla içerenleri filtreleyerek yeni bir dizi oluşturun
+        const countriesWithSixOrMoreChars = countries.filter(country => country.length >= 6);
+
+        // countries dizisinden 'E' ile başlayanları filtreleyerek yeni bir dizi oluşturun
+        const countriesStartingWithE = countries.filter(country => country.startsWith('E'));
+        console.log(countriesStartingWithE)
+
+        // products dizisinde sadece fiyatı olanları filtreleyerek yeni bir dizi oluşturun
+        const validPrices = products.filter(product => typeof product.price === 'number' && !isNaN(product.price));
+        console.log(validPrices)
+
+
+    </script>
+
+</body>
+</html>

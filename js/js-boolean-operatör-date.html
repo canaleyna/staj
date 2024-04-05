@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+        // Değişkenleri oluşturun ve değer atayın
+        let firstName = "Aleyna";
+        let lastName = "Can";
+        let country = "TR";
+        let city = "Samsun";
+        let age = 24;
+        let isMarried = false;
+        let year = 1999;
+
+        // typeof operatörünü kullanarak veri türlerini kontrol edin
+        console.log(typeof firstName); // string
+        console.log(typeof age); // number
+        console.log(typeof isMarried); // boolean
+
+        // '10' türünün 10'a eşit olup olmadığını kontrol edin
+        console.log('10' == 10); // true
+
+        // parseInt('9.8') 10'a eşit olup olmadığını kontrol edin
+        console.log(parseInt('9.8') === 10); // true
+
+        // Doğruluk değeri sağlayan üç JavaScript ifadesi
+        console.log(4 > 3); // true
+        console.log('hello' !== 'world'); // true
+        console.log(10 >= 10); // true
+
+        // Yanlış değer sağlayan üç JavaScript ifadesi
+        console.log(5 <= 4); // false
+        console.log('apple' === 'orange'); // false
+        console.log(20 < 18); // false
+
+        // Karşılaştırma ifadelerinin sonuçlarını kontrol edin
+        console.log(4 > 3); // true
+        console.log(4 >= 3); // true
+        console.log(4 < 3); // false
+        console.log(4 <= 3); // false
+        console.log(4 == 4); // true
+        console.log(4 === 4); // true
+        console.log(4 != 4); // false
+        console.log(4 !== 4); // false
+        console.log(4 != '4'); // false
+        console.log(4 == '4'); // true
+        console.log(4 === '4'); // false
+
+        // Python ve jargonun uzunluğunu bulun ve yanlış bir karşılaştırma ifadesi yapın.
+        let pythonLength = 'Python'.length;
+        let jargonLength = 'Jargon'.length;
+        console.log(pythonLength, jargonLength); // 6 6
+        console.log(pythonLength > jargonLength); // false
+
+        // Karşılaştırma ifadelerinin sonuçlarını kontrol edin
+        console.log(4 > 3 && 10 < 12); // true
+        console.log(4 > 3 && 10 > 12); // false
+        console.log(4 > 3 || 10 < 12); // true
+        console.log(4 > 3 || 10 > 12); // true
+        console.log(!(4 > 3)); // false
+        console.log(!(4 < 3)); // true
+        console.log(!(false)); // true
+        console.log(!(4 > 3 && 10 < 12)); // false
+        console.log(!(4 > 3 && 10 > 12)); // true
+        console.log(!(4 === '4')); // true
+
+        // Hem dragon hem de python'da 'on' yoktur. //yanlış bi ifade
+        let dragonString = 'dragon';
+        let pythonString = 'python';
+        console.log(dragonString.includes('on') && pythonString.includes('on')); // vardır true döner.
+
+        // Date nesnesini kullanarak tarih ve saat işlemleri
+        let today = new Date();
+
+        // Bugün yıl nedir?
+        console.log(today.getFullYear());
+
+        // Bugünün ayı rakam olarak nedir?
+        console.log(today.getMonth() + 1); // (Ay 0'dan başladığı için +1 eklenir)
+
+        // Bugünün tarihi nedir?
+        console.log(today.getDate());
+
+        // Bugün sayı olarak gün nedir?
+        console.log(today.getDay());
+
+        // Şimdi saat kaç?
+        console.log(today.getHours());
+
+        // Dakika kaç şimdi?
+        console.log(today.getMinutes());
+
+        // 1 Ocak 1970'ten bugüne kadar geçen saniye sayısını bulun. //gettime milisaniyeyi verdiği için 1000 e böldük
+        console.log(Math.floor(today.getTime() / 1000));
+
+
+
+        // Üçgen Alanı Hesaplama
+        const base = parseFloat(prompt('Üçgenin tabanı:'));
+        const height = parseFloat(prompt('Üçgenin yüksekliği:'));
+        const area = 0.5 * base * height;
+        console.log(`Üçgenin alanı ${area}`);
+
+        // Üçgen Çevresi Hesaplama
+        const sideA = parseFloat(prompt('Üçgenin a kenar uzunluğu:'));
+        const sideB = parseFloat(prompt('Üçgenin b kenar uzunluğu:'));
+        const sideC = parseFloat(prompt('Üçgenin c kenar uzunluğu:'));
+        const perimeter = sideA + sideB + sideC;
+        console.log(`Üçgenin çevresi ${perimeter}`);
+
+        // Dikdörtgen Alanı ve Çevresi Hesaplama
+        const length = parseFloat(prompt('Dikdörtgenin kısa kenarı:'));
+        const width = parseFloat(prompt('Dikdörtgenin uzun kenarı:'));
+        const areaRectangle = length * width;
+        const perimeterRectangle = 2 * (length + width);
+        console.log(`Dikdörtgenin alanı: ${areaRectangle}`);
+        console.log(`Dikdörtgenin çevresi: ${perimeterRectangle}`);
+
+        // Daire Alanı ve Çevresi Hesaplama
+        const radius = parseFloat(prompt('Dairenin yarıçapı:'));
+        const pi = 3.14;
+        const areaCircle = pi * radius * radius;
+        const circumference = 2 * pi * radius;
+        console.log(`Dairenin alanı: ${areaCircle}`);
+        console.log(`Dairenin çevresi: ${circumference}`);
+
+
+        //ehliyet alabilme sorgulama
+        const birthYear = parseInt(prompt('Doğum yılınızı girin:'));
+        const currentYear = new Date().getFullYear();
+        const drivingAge = 18;
+
+        const age = currentYear - birthYear;
+
+        const message = age >= drivingAge
+            ? `Yaşınız ${age}. Ehliyet almak için yeterli yaşa sahipsiniz.`
+            : `Yaşınız ${age}. Ehliyet almak için ${drivingAge - age} yıl beklemelisiniz. En erken ${currentYear + (drivingAge - age)} yılında başvurabilirsiniz.`;
+
+        console.log(message);
+
+
+
+    </script>
+
+</body>
+
+</html>
+

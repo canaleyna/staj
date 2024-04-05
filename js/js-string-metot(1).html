@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+</head>
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+        // The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another.
+        console.log("The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another.");
+
+        // Rahibe Teresa'nın alıntısı
+        console.log('"Love is not patronizing and charity isn\'t about pity, it is about love. Charity and love are the same -- with charity you give love, so don\'t just give money but reach out your hand instead."');
+
+        // '10' tipinin tam olarak 10'a eşit olup olmadığını kontrol etme
+        console.log(parseInt('10') === 10);
+
+        // parseFloat('9.8') 10'a tam olarak eşit değilse, 10'a eşit olup olmadığını kontrol etme.
+        console.log(parseFloat('9.8') === 10);
+
+        // Hem python hem de jargonda 'on' ifadesinin bulunup bulunmadığını kontrol etme
+        console.log('python'.includes('on') && 'jargon'.includes('on'))
+
+
+        // 0 ile 100 arasında rastgele bir sayı üretme
+        let randomNum1 = Math.floor(Math.random() * 101);
+        console.log('0 ile 100 arasında rastgele sayı: ' + randomNum1);
+
+        // 50 ile 100 arasında rastgele bir sayı üretme
+        let randomNum2 = Math.floor(Math.random() * 51) + 50;
+        console.log('50 ile 100 arasında rastgele sayı: ' + randomNum2);
+
+        // Dahil olmak üzere 0 ile 255 arasında rastgele bir sayı oluşturma
+        let randomNum3 = Math.floor(Math.random() * 256);
+        console.log('0 ile 255 arasında rastgele sayı: ' + randomNum3);
+
+        // Rastgele bir sayı kullanarak 'JavaScript' dize karakterlerine erişme
+        let randomIndex = Math.floor(Math.random() * 'JavaScript'.length);
+        console.log('Rastgele index\'e erişilen karakter: ' + 'JavaScript'.charAt(randomIndex));
+
+        // 1 1 1 1 1, 2 1 2 4 8, 3 1 3 9 27, 4 1 4 16 64, 5 1 5 25 125 kalıbını yazdırma
+        console.log('1 1 1 1 1\n2 1 2 4 8\n3 1 3 9 27\n4 1 4 16 64\n5 1 5 25 125');
+
+        // Verilen cümlede 'aşk' kelimesinin kaç kez geçtiğini sayalım.
+        // \b kelime sınırlayıcı g global i ise case-insensitive(büyük küçük harf duyarlılığı)
+        const loveCumlesi = 'Aşk dünyadaki en güzel şeydir. Kimileri aşkı buldu, kimileri hâlâ aşkını arıyor.';
+        const loveSayisi = (loveCumlesi.match(/\başk\b/gi) || []).length;
+        console.log('"Aşk" kelimesinin sayısı:', loveSayisi);
+
+
+         // Metindeki özel karakterleri temizle
+        const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching';
+        const cleanedSentence = sentence.replace(/[^a-zA-Z0-9 ]/g, '');
+        console.log(cleanedSentence);
+
+
+    </script>
+
+
+</body>
+</html>

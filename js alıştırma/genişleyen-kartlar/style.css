@@ -1,0 +1,67 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.container {
+    display: flex; /*yan yana dizilsinler diye*/
+    width: 90vw;
+
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    flex: 0.5; /*width yerine*/
+    position: relative; /*yazıları taşıyabilmek için*/
+    border-radius: 50px;
+    margin: 10px;
+
+    cursor: pointer;
+    transition: flex 0.7s ease-in; /*js de dinamik hale gelecek, geçiş efekti*/
+}
+
+.panel h3{
+    position: absolute;
+    font-size: 3rem;
+    color:#000;
+    bottom: 40px; /*pozisyon konumu*/
+    left: 30px; 
+    opacity: 0; /*js ile tıklanınca görünsün istiyorum ondan saydam*/
+    transition: opacity 0.3s ease-in 0.4s;
+
+}
+
+/*panel aktif olduğunda 5x geniş görünsün*/
+.panel.active{
+    flex:5;
+}
+
+.panel.active h3{
+    opacity:1;
+}
+
+/*ekran 600px den küçük ise 3 tane panel görünsün 4 ile 5 gizlensin*/
+@media screen and (max-width: 600px){
+    .container{
+        width:100vh;
+    }
+    .panel:nth-child(4),
+    .panel:nth-child(5){
+        display: none;
+    }
+}

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+        // Kullanıcıdan yaş bilgisini al
+        const userAge = parseInt(prompt('Ehliyet sorgusu için yaşınızı giriniz:'));
+
+        // 18 yaş kontrolü
+        if (userAge >= 18) {
+            console.log('Araba kullanabilirsin');
+        } else {
+            const yearsLeft = 18 - userAge;
+            console.log(`Araba kullanabilmen için ${yearsLeft} yıla ihtiyacın var.`);
+        }
+
+
+
+        // myAge ve yourAge karşılaştırması
+        const myAge = 24; // Kendi yaşınızı buraya girin
+        const yourAge = parseInt(prompt('Senin yaşın:'));
+
+        // Yaş karşılaştırması ve sonuç
+        if (myAge > yourAge) {
+            console.log('Ben senden ' + (myAge - yourAge) + ' yaş büyüğüm.');
+        } else if (myAge < yourAge) {
+            console.log('Sen benden ' + (yourAge - myAge) + ' yaş büyüksün.');
+        } else {
+            console.log('Aynı yaştayız.');
+        }
+
+        // a ve b karşılaştırması
+        let a = 4;
+        let b = 3;
+
+        // if else kullanarak
+        if (a > b) {
+            console.log(`${a} büyüktür ${b} den`);
+        } else {
+            console.log(`${a} küçüktür ${b} den`);
+        }
+
+        // ternary operator kullanarak
+        console.log((a > b) ? `${a} büyüktür ${b}` : `${a} küçüktür ${b}`);
+
+        // Çift sayı kontrolü
+        const number = parseInt(prompt('Tek/çift sayı kontrolü için sayıyı giriniz: '));
+
+        if (number % 2 === 0) {
+            console.log(`${number} çift bir sayıdır.`);
+        } else {
+            console.log(`${number} tek bir sayıdır.`);
+        }
+
+
+
+        // Öğrenci notları
+        const ogrenciPuani = parseInt(prompt('Puanınızı girin:'));
+        let not;
+
+        if (ogrenciPuani >= 80 && ogrenciPuani <= 100) {
+            not = 'A';
+        } else if (ogrenciPuani >= 70 && ogrenciPuani < 80) {
+            not = 'B';
+        } else if (ogrenciPuani >= 60 && ogrenciPuani < 70) {
+            not = 'C';
+        } else if (ogrenciPuani >= 50 && ogrenciPuani < 60) {
+            not = 'D';
+        } else if (ogrenciPuani >= 0 && ogrenciPuani < 50) {
+            not = 'F';
+        } else {
+            console.log('Geçersiz puan. Lütfen 0 ile 100 arasında bir puan girin.');
+        }
+
+        if (not) {
+            console.log(`Notunuz: ${not}`);
+        }
+
+
+
+        // Mevsim kontrolü
+        const ay = prompt('Mevsimini öğrenmek istediğiniz ayı girin:').toLowerCase();
+        let mevsim;
+
+        if (ay === 'eylül' || ay === 'ekim' || ay === 'kasım') {
+            mevsim = 'Sonbahar';
+        } else if (ay === 'aralık' || ay === 'ocak' || ay === 'şubat') {
+            mevsim = 'Kış';
+        } else if (ay === 'mart' || ay === 'nisan' || ay === 'mayıs') {
+            mevsim = 'İlkbahar';
+        } else if (ay === 'haziran' || ay === 'temmuz' || ay === 'ağustos') {
+            mevsim = 'Yaz';
+        } else {
+            console.log('Geçersiz ay. Lütfen geçerli bir ay girin.');
+        }
+
+        if (mevsim) {
+            console.log(`Mevsim: ${mevsim}`);
+        }
+
+        // Hafta sonu veya iş günü kontrolü
+        const gun = prompt('Bugün günlerden ne?').toLowerCase();
+
+        if (gun === 'cumartesi' || gun === 'pazar') {
+            console.log(`${gun} günü hafta sonudur.`);
+        } else if (
+            gun === 'pazartesi' ||
+            gun === 'salı' ||
+            gun === 'çarşamba' ||
+            gun === 'perşembe' ||
+            gun === 'cuma'
+        ) {
+            console.log(`${gun} günü iş günüdür.`);
+        } else {
+            console.log('Geçersiz gün. Lütfen geçerli bir gün girin.');
+        }
+
+
+        // ayda kaç gün var 
+        // Kullanıcıdan ayı al
+        const month = prompt('Bir ay girin:').toLowerCase();
+        let gunSayisi;
+
+        // Ayın gün sayısını belirle
+        switch (month) {
+            case 'ocak':
+            case 'mart':
+            case 'mayıs':
+            case 'temmuz':
+            case 'ağustos':
+            case 'ekim':
+            case 'aralık':
+                gunSayisi = 31;
+                break;
+            case 'nisan':
+            case 'haziran':
+            case 'eylül':
+            case 'kasım':
+                gunSayisi = 30;
+                break;
+            case 'şubat':
+                gunSayisi = 28;
+                break;
+            default:
+                console.log('Geçersiz ay. Lütfen geçerli bir ay girin.');
+        }
+
+        // Sonucu yazdır
+        if (gunSayisi) {
+            console.log(`${month.charAt(0).toUpperCase() + month.slice(1)} ayı ${gunSayisi} gün içerir.`); //ilk harf büyük olsun diye.
+        }
+
+
+    </script>
+
+</body>
+</html>

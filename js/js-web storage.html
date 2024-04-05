@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+        // Adınızı, soyadınızı, yaşınızı, ülkenizi, şehrinizi tarayıcınızın localStorage'ında saklayın.
+        const userInfo = {
+            firstName: 'Aleyna',
+            lastName: 'Can',
+            user_age: 24,
+            user_country: 'TR',
+            city: 'Samsun'
+        };
+
+        // JSON.stringify ile nesneyi string'e çevirip localStorage'a kaydetme
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+        // localStorage'tan veriyi alıp JSON.parse ile nesneye geri çevirme
+        const storedInfo = localStorage.getItem('userInfo');
+        const parsedInfo = JSON.parse(storedInfo);
+
+        // Alınan veriyi kullanma
+        console.log(parsedInfo.firstName); // Aleyna
+        console.log(parsedInfo.user_age); // 24
+
+
+
+
+        // Bir öğrenci nesnesi oluşturun.
+        const student = {
+            name: 'Ali',
+            surname: 'Veli',
+            age: 22,
+            skills: ['JavaScript', 'HTML', 'CSS'],
+            country: 'USA',
+            registrationKeys: ['username', 'email', 'password'],
+            registrationValues: ['ali22', 'ali@example.com', 'password123']
+        };
+
+        // Öğrenci nesnesini tarayıcınızın localStorage'ında saklayın.
+        localStorage.setItem('studentInfo', JSON.stringify(student));
+
+        // localStorage'tan veriyi alıp JSON.parse ile nesneye geri çevirme
+        const storedStudent = localStorage.getItem('studentInfo');
+        const parsedStudent = JSON.parse(storedStudent);
+
+        // Alınan veriyi kullanma
+        console.log(parsedStudent.name); // Ali
+        console.log(parsedStudent.skills); // ['JavaScript', 'HTML', 'CSS']
+
+
+
+
+        
+
+    </script>
+
+</body>
+</html>

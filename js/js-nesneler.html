@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+        // 1. Boş bir obje oluşturun ve adını 'köpek' olarak adlandırın.
+        let köpek = {};
+
+        // 2. Köpek objesini konsola yazdırın.
+        console.log(köpek);
+
+        // 3. Köpek objesi için ad, bacaklar, renk, yaş ve havlama özelliklerini ekleyin.
+        // Havlama özelliği, woof woof döndüren bir metod olmalıdır.
+        köpek.ad = 'Buddy';
+        köpek.bacaklar = 4;
+        köpek.renk = 'Kahverengi';
+        köpek.yaş = 3;
+        köpek.havla = function () {
+            return 'hav hav';
+        };
+
+        // 4. Köpek objesinden ad, bacaklar, renk, yaş ve havlama değerlerini alın.
+        console.log(köpek.ad);    // Buddy
+        console.log(köpek.bacaklar);  // 4
+        console.log(köpek.renk); // Kahverengi
+        console.log(köpek.yaş);  // 3
+        console.log(köpek.havla()); // hav hav
+
+        // 5. Köpek objesine yeni özellikler ekleyin: cins, getKöpekBilgisi
+        köpek.cins = 'Golden Retriever';
+        köpek.getKöpekBilgisi = function () {
+            return `Ad: ${this.ad}, Bacaklar: ${this.bacaklar}, Renk: ${this.renk}, Yaş: ${this.yaş}, Cins: ${this.cins}`;
+        };
+
+
+
+
+    </script>
+
+
+</body>
+</html>

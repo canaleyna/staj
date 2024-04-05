@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.5s;
+        }
+
+        .wrapper {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #4285f4;
+        }
+
+        /* Completed Challenge */
+        li:nth-child(1) {
+            background-color: #70de2b;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Ongoing Challenge */
+        li:nth-child(2) {
+            background-color: #faff46;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Coming Challenges */
+        li:nth-child(n+3) {
+            background-color: #f42828;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Aleyna CAN challenges in 2023</h1>
+        <h2 id="year">JavaScript Challenge</h2>
+        <ul id="challengesList">
+            <li>gdffdhhgjf</li>
+            <li>fhfghfgh gfhghfgh</li>
+            <li>dgdfdfdfffh</li>
+            <li>sdgdsgdgfdhfhfhghghgghh</li>
+            <li>fddggff fd dfgd  fgdf</li>
+            <li>fgdfgfgdfssfdgfgdfhfsgfgdggfgg</li>
+            <li>fgdgfddffd dgdg dg</li>
+        </ul>
+    </div>
+
+    <script>
+        // Yıl rengini her 1 saniyede bir değiştir
+        setInterval(() => {
+            const yearElement = document.getElementById('year');
+            yearElement.style.color = getRandomColor();
+        }, 1000);
+
+        // Tarih ve saat arka plan rengini her 1 saniyede bir değiştir
+        setInterval(() => {
+            document.body.style.backgroundColor = getRandomColor();
+        }, 1000);
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>

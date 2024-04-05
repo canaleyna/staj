@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+        // Boş bir set oluşturun
+        const emptySet = new Set();
+        console.log(emptySet);
+
+        // Döngü kullanarak 0 ile 10 aralığını içeren bir set oluşturun
+        const numberSet = new Set();
+        for (let i = 0; i < 10; i++) {
+            numberSet.add(i);
+        }
+        console.log(numberSet);
+
+        // Set içinden bir eleman silin
+        numberSet.delete(5);
+        console.log(numberSet);
+
+        // Set'i temizleyin
+        numberSet.clear();
+        console.log(numberSet);
+
+        // 5 string eleman içeren bir set oluşturun (dizi ile oluşturulacak)
+        const stringArray = ['apple', 'banana', 'orange', 'kiwi', 'grape'];
+        const stringSet = new Set(stringArray);
+        console.log(stringSet);
+
+        // Bir ülke map'ı oluşturun ve içindeki ülkelerin karakter sayısını girin
+        const countries = ['Finland', 'Sweden', 'Norway'];
+        const countryMap = new Map();
+
+        countries.forEach(country => {
+            countryMap.set(country, country.length);
+        });
+
+        console.log(countryMap);
+
+
+
+
+        const a = [4, 5, 8, 9];
+        const b = [3, 4, 5, 7];
+
+        // A birleşim B
+        const unionSet = new Set([...a, ...b]);
+        console.log('A birleşim B:', unionSet);
+
+        // A kesişim B
+        const intersectionSet = new Set(a.filter(num => b.includes(num)));
+        console.log('A kesişim B:', intersectionSet);
+
+        // A ile B'nin farkı
+        const differenceSetA = new Set(a.filter(num => !b.includes(num)));
+        console.log('A - B:', differenceSetA);
+
+        const differenceSetB = new Set(b.filter(num => !a.includes(num)));
+        console.log('B - A:', differenceSetB);
+
+
+
+    </script>
+
+</body>
+</html>

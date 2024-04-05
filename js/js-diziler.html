@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+
+        // Boş bir dizi yaratın
+        const emptyArray = [];
+
+        // Eleman sayısı 5'ten fazla olan bir dizi yaratın
+        const FiveElements = [1, 2, 3, 4, 5, 6, 7];
+
+        // Dizinin uzunluğunu bulun (length)
+        console.log("Uzunluk:", FiveElements.length);
+
+        // Dizinin ilk, ortadaki ve sondaki elemanı
+        console.log("İlk eleman:", FiveElements[0]);
+        console.log("Ortadaki eleman:", FiveElements[Math.floor(FiveElements.length / 2)]);
+        console.log("Sondaki eleman:", FiveElements[FiveElements.length - 1]);
+
+        // mixedDataTypes adında bir dizi yaratın
+        const mixedDataTypes = [1, 'Hello', true, [3,4], null];
+
+        // Dizinin uzunluğunu bulun
+        console.log("Uzunluk:", mixedDataTypes.length);
+
+        // ItCompanies adlı bir dizi değişkeni oluşturun
+        const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
+
+        // Diziyi yazdırın
+        console.log(itCompanies);
+
+        // Dizideki şirketlerin sayısını yazdırın
+        console.log("Şirket sayısı:", itCompanies.length);
+
+        // Dizideki ilk, ortadaki ve son elemanı yazdırın
+        console.log("İlk eleman:", itCompanies[0]);
+        console.log("Ortadaki eleman:", itCompanies[Math.floor(itCompanies.length / 2)]);
+        console.log("Sondaki eleman:", itCompanies[itCompanies.length - 1]);
+
+
+        // Diziyi bir cümle gibi yazdırın
+        const companiesSentence = itCompanies.join(', ') + ' büyük şirketlerdir.';
+        console.log(companiesSentence);
+
+        // itCompanies dizisinde belirli bir şirketin olup olmadığını kontrol edin
+        const searchCompany = 'Microsoft';
+        const foundCompany = itCompanies.includes(searchCompany);
+        console.log(foundCompany ? searchCompany + " bulundu." : "Bulunamadı.");
+
+
+        // sort() metodunu kullanarak diziyi sıralayın
+        const sortedCompanies = itCompanies.slice().sort();
+        console.log("Sıralı şirketler:", sortedCompanies);
+
+        // reverse() metodunu kullanarak diziyi tersine çevirin
+        const reversedCompanies = itCompanies.slice().reverse();
+        console.log("Tersine çevrilmiş şirketler:", reversedCompanies);
+
+        // Diziden ilk 3 şirketi dilimleyin (Slice edin)
+        const firstThreeCompanies = itCompanies.slice(0, 3);
+        console.log("İlk 3 şirket:", firstThreeCompanies);
+
+        // Diziden son 3 şirketi dilimleyin (Slice edin)
+        const lastThreeCompanies = itCompanies.slice(-3);
+        console.log("Son 3 şirket:", lastThreeCompanies);
+
+
+        // İlk IT şirketini diziden kaldırın
+        itCompanies.shift();
+        console.log("İlk şirket kaldırıldı:", itCompanies);
+
+
+        // Sondaki IT şirketini diziden kaldırın
+        itCompanies.pop();
+        console.log("Son şirket kaldırıldı:", itCompanies);
+
+
+
+
+
+        const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+
+        // Eğer 'Meat' eklenmemişse, en başa ekle
+        if (!shoppingCart.includes('Meat')) {
+            shoppingCart.unshift('Meat');
+        }
+
+        // Eğer 'Sugar' eklenmemişse, en sona ekle
+        if (!shoppingCart.includes('Sugar')) {
+            shoppingCart.push('Sugar');
+        }
+        console.log(shoppingCart);
+
+
+
+
+        const yaşlar = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+
+        // Diziyi sırala
+        const sıralıYaşlar = yaşlar.sort();
+
+        // En küçük ve en büyük yaşı bulma
+        const enKüçükYaş = sıralıYaşlar[0];
+        const enBüyükYaş = sıralıYaşlar[sıralıYaşlar.length - 1];
+
+        console.log('Sıralı Yaşlar:', sıralıYaşlar);
+        console.log('En Küçük Yaş:', enKüçükYaş);
+        console.log('En Büyük Yaş:', enBüyükYaş);
+
+        // Medyan yaşı bulma
+        const ortaIndex = Math.floor(sıralıYaşlar.length / 2);
+        const medyanYaş = sıralıYaşlar.length % 2 === 0
+            ? (sıralıYaşlar[ortaIndex - 1] + sıralıYaşlar[ortaIndex]) / 2
+            : sıralıYaşlar[ortaIndex];
+
+        console.log('Medyan Yaş:', medyanYaş);
+
+        // Ortalama yaşı bulma
+        let yaşToplamı = 0;
+
+        for (let i = 0; i < yaşlar.length; i++) {
+            yaşToplamı += yaşlar[i];
+        }
+
+        const ortalamaYaş = yaşToplamı / yaşlar.length;
+
+        console.log('Ortalama Yaş:', ortalamaYaş);
+
+
+    </script>
+
+</body>
+</html>

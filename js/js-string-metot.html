@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+</head>
+<body>
+
+    <h1>Sayfayı incele</h1>
+
+    <script>
+        // Challenge adında bir değişken tanımlayın ve '30 Days Of JavaScript' başlangıç ​​değerine atayın.
+        let challenge = '30 Days Of JavaScript';
+
+        // console.log() kullanarak tarayıcı konsolunda değişkeni yazdırın,
+        console.log(challenge);
+
+        // console.log() kullanarak tarayıcı konsolunda dizenin length değerini yazdırın,
+        console.log(challenge.length);
+
+        // toUpperCase() yöntemini kullanarak tüm dize karakterlerini büyük harflerle değiştirin,
+        console.log(challenge.toUpperCase());
+
+        // toLowerCase() yöntemini kullanarak tüm dize karakterlerini küçük harflerle değiştirin,
+        console.log(challenge.toLowerCase());
+
+        // substr() veya substring() yöntemini kullanarak string'in ilk kelimesini kesin-silin (dilimleyin)
+        console.log(challenge.substr(0, challenge.indexOf(' ')));
+
+        // Days Of JavaScript ifadesini 30 Days Of JavaScript'ten ayırın.
+        console.log(challenge.slice(challenge.indexOf('Days'), challenge.length));
+
+        // includes() yöntemini kullanarak string'in Script kelimesini içerip içermediğini kontrol edin
+        console.log(challenge.includes('Script'));
+
+        // split() yöntemini kullanarak string öğesini bir array'ye bölün // boşluktan böl
+        console.log(challenge.split(' '));
+
+        // 30 Days Of JavaScript dizesini split() yöntemini kullanarak bölün // tüm karakterler tek tek
+        console.log(challenge.split(''));
+
+        // 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' dizeyi virgülden split ve bir dizi olarak değiştirin.
+        let companies = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon';
+        console.log(companies.split(', '));
+
+        // replace() yöntemini kullanarak 30 Days of JavaScript'i 30 Days of Python olarak değiştirin.
+        console.log(challenge.replace('JavaScript', 'Python'));
+
+        // 'JavaScript'in 30 Günü' dizesinde dizin 15'teki karakter nedir? charAt() yöntemini kullanın.
+        console.log('JavaScript\'in 30 Günü'.charAt(14));
+
+        // charCodeAt() kullanan 'JavaScript'in 30 Günü' dizesindeki J ASCII kodu nedir?
+        console.log('JavaScript\'in 30 Günü'.charCodeAt(0));
+
+        // 30 Days of JavaScript'te a öğesinin ilk oluşumunun konumunu belirlemek için indexOf kullanın
+        console.log(challenge.indexOf('a'));
+
+        // 30 Days of JavaScript'te a öğesinin son oluşumunun konumunu belirlemek için lastIndexOf kullanın.
+        console.log(challenge.lastIndexOf('a'));
+
+        // Aşağıdaki cümlede çünkü kelimesinin ilk geçtiği yeri bulmak için indexOf kullanın: 'Bir cümleyi çünkü ile bitiremezsiniz çünkü çünkü bir bağlaçtır'
+        console.log('Bir cümleyi çünkü ile bitiremezsiniz çünkü çünkü bir bağlaçtır'.indexOf('çünkü'));
+
+        // Aşağıdaki cümlede çünkü kelimesinin son geçtiği yeri bulmak için lastIndexOf kullanın: 'Bir cümleyi çünkü ile bitiremezsiniz çünkü çünkü bir bağlaçtır'
+        console.log('Bir cümleyi çünkü ile bitiremezsiniz çünkü çünkü bir bağlaçtır'.lastIndexOf('çünkü'));
+
+        // Aşağıdaki cümlede çünkü kelimesinin ilk geçtiği yeri bulmak için search kullanın: 'Bir cümleyi çünkü ile bitiremezsiniz çünkü çünkü bir bağlaçtır'
+        console.log('Bir cümleyi çünkü ile bitiremezsiniz çünkü çünkü bir bağlaçtır'.search('çünkü'));
+
+        // Bir dizgenin başındaki ve sonundaki boşlukları kaldırmak için trim() kullanın. Örneğin '30 Days Of JavaScript'.
+        let stringWithSpaces = '   30 Days Of JavaScript   ';
+        console.log(stringWithSpaces.trim());
+
+        // 30 Days Of JavaScript dizesiyle startsWith() yöntemini kullanın ve sonucu doğru yapın
+        console.log(challenge.startsWith('30'));
+
+        // 30 Days Of JavaScript dizesiyle endsWith() yöntemini kullanın ve sonucu doğru yapın
+        console.log(challenge.endsWith('JavaScript'));
+
+        // JavaScript'in 30 Günü'ndeki tüm a'leri bulmak için match() yöntemini kullanın
+        console.log('JavaScript\'in 30 Günü'.match(/a/g));
+
+        // concat() kullanın ve '30 Days of' ve 'JavaScript'i tek bir dize olan '30 Days of JavaScript' ile birleştirin
+        let part1 = '30 Days of ';
+        let part2 = 'JavaScript';
+        console.log(part1.concat(part2));
+
+        // 30 Gün JavaScript'i 2 kez yazdırmak için repeat() yöntemini kullanın
+        console.log(challenge.repeat(2));
+
+    </script>
+
+</body>
+</html>
